@@ -14,11 +14,11 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      
+
       {/* Glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      
+
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/60 border border-border/50 backdrop-blur-sm"
           >
             <Shield className="w-4 h-4 text-green-500 dark:text-green-400" />
-            <span className="text-sm text-muted-foreground">100% Privacy-First</span>
+            <span className="text-sm text-muted-foreground">dayLink - 100% Privacy-First</span>
           </motion.div>
 
           {/* Main heading */}
@@ -47,7 +47,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              A privacy-first meeting scheduler that runs entirely in your browser. 
+              A privacy-first meeting scheduler that runs entirely in your browser.
               No servers, no tracking, no compromises.
             </p>
           </div>

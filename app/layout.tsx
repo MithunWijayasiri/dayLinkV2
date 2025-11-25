@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "dayLink - Privacy-First Meeting Scheduler",
+  title: "dayLink - Meeting Scheduler",
   description: "A privacy-first, local-first meeting scheduler that runs entirely in your browser with no backend servers.",
 };
 
