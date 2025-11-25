@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# dayLink - Privacy-First Meeting Scheduler
 
-## Getting Started
+![dayLink Banner](https://img.shields.io/badge/Privacy-First-green) ![Next.js](https://img.shields.io/badge/Next.js-16-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
-First, run the development server:
+A privacy-first meeting scheduler that runs entirely in your browser. No servers, no tracking, no compromises.
+
+## ✨ Features
+
+### 🔒 Privacy First
+- **100% Local Storage** - All data stays in your browser
+- **AES-256 Encryption** - Military-grade encryption for your data
+- **No Backend Required** - Zero servers, zero tracking
+- **Unique Phrase Authentication** - No email or password needed
+
+### 📅 Meeting Management
+- **Multi-Platform Support** - Google Meet, Microsoft Teams, Zoom, and custom links
+- **Recurring Meetings** - Daily, weekdays, weekends, or custom schedules
+- **Drag & Drop Reordering** - Organize meetings your way
+- **Quick Templates** - Create meetings from saved templates
+
+### 🎨 Modern UI
+- **Dark Mode Default** - Easy on the eyes with optional light mode
+- **Animated Transitions** - Smooth Framer Motion animations
+- **Responsive Design** - Works on desktop and mobile
+- **Calendar View** - Visual overview with meeting indicators
+
+### 🔔 Smart Features
+- **Browser Notifications** - Get reminded before meetings
+- **One-Click Join** - Join meetings instantly
+- **Export/Import Backup** - Easily move between devices
+- **Offline Ready** - Works without internet connection
+
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+dayLink/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout with providers
+│   ├── page.tsx            # Landing page with onboarding
+│   ├── dashboard/          # Dashboard pages
+│   └── globals.css         # Global styles & theme
+├── components/
+│   ├── auth/               # Login, Onboarding components
+│   ├── dashboard/          # Header, Greeting, QuickActions
+│   ├── landing/            # Hero, Features, HowItWorks
+│   ├── meetings/           # MeetingForm, MeetingList, Calendar
+│   ├── shared/             # ThemeToggle, Footer, EmptyState
+│   └── ui/                 # Shadcn/UI components
+├── hooks/                  # Custom React hooks
+│   ├── use-auth.tsx        # Authentication context
+│   ├── use-meetings.ts     # Meeting CRUD operations
+│   ├── use-theme.ts        # Theme management
+│   └── use-notifications.ts # Browser notifications
+├── lib/                    # Utility libraries
+│   ├── encryption.ts       # AES-256 encryption
+│   ├── storage.ts          # LocalStorage wrapper
+│   ├── meeting-utils.ts    # Meeting helpers
+│   └── notifications.ts    # Notification scheduling
+├── types/                  # TypeScript definitions
+│   └── index.ts            # All type interfaces
+└── constants/              # App constants
+    └── templates.ts        # Default meeting templates
+```
 
-## Learn More
+## 🔐 How Authentication Works
 
-To learn more about Next.js, take a look at the following resources:
+dayLink uses a unique **phrase-based authentication** system:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Generate Phrase** - A unique XXXXX-XXXXX format phrase is generated
+2. **Save Phrase** - This is your "password" - keep it safe!
+3. **Login Anytime** - Enter your phrase on any device to access your data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Your phrase is used to encrypt/decrypt your data using AES-256 encryption.
 
-## Deploy on Vercel
+## 📱 Supported Platforms
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Platform | Auto-Detection | Icon |
+|----------|---------------|------|
+| Google Meet | ✅ | 🟢 |
+| Microsoft Teams | ✅ | 🔵 |
+| Zoom | ✅ | 🔷 |
+| Custom Links | ✅ | 🔗 |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Theming
+
+dayLink uses CSS custom properties for theming:
+
+- **Dark Mode** (default) - Perfect for late-night meeting prep
+- **Light Mode** - Toggle via the sun/moon switch in the header
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 with App Router & Turbopack
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4 with CSS variables
+- **Animations**: Framer Motion 12
+- **UI Components**: Radix UI + Shadcn/UI
+- **Drag & Drop**: @dnd-kit
+- **Encryption**: crypto-js (AES-256)
+- **Date Handling**: date-fns 4
+- **Notifications**: react-hot-toast
+
+## 📦 Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+## 🔄 Data Backup
+
+### Export Backup
+1. Click your username in the header
+2. Select "Export Backup"
+3. Save the JSON file securely
+
+### Import Backup
+1. Click "I Have an Account" on landing page
+2. Click "Import Backup"
+3. Select your backup file
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+**Made with ❤️ for privacy**
