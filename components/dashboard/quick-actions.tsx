@@ -20,7 +20,7 @@ export function QuickActions({ onAddMeeting, onViewCalendar, onViewTemplates }: 
     >
       <Button
         onClick={onAddMeeting}
-        className="bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+        className="bg-foreground text-background hover:bg-foreground/90"
       >
         <Plus className="w-4 h-4 mr-2" />
         Add Meeting
@@ -29,7 +29,7 @@ export function QuickActions({ onAddMeeting, onViewCalendar, onViewTemplates }: 
       <Button
         onClick={onViewCalendar}
         variant="outline"
-        className="bg-zinc-800/50 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-50"
+        className="bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
       >
         <Calendar className="w-4 h-4 mr-2" />
         Calendar
@@ -38,7 +38,7 @@ export function QuickActions({ onAddMeeting, onViewCalendar, onViewTemplates }: 
       <Button
         onClick={onViewTemplates}
         variant="outline"
-        className="bg-zinc-800/50 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-50"
+        className="bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
       >
         <LayoutTemplate className="w-4 h-4 mr-2" />
         Templates

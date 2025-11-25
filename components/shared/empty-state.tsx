@@ -41,15 +41,15 @@ export function EmptyState({ type, title, description, action }: EmptyStateProps
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center justify-center py-12 px-4 text-center"
     >
-      <div className="w-16 h-16 rounded-2xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center mb-4">
-        <Icon className="w-8 h-8 text-zinc-500" />
+      <div className="w-16 h-16 rounded-2xl bg-muted/50 border border-border/50 flex items-center justify-center mb-4">
+        <Icon className="w-8 h-8 text-muted-foreground" />
       </div>
       
-      <h3 className="text-lg font-medium text-zinc-300 mb-1">
+      <h3 className="text-lg font-medium text-foreground mb-1">
         {title || defaultContent.title}
       </h3>
       
-      <p className="text-sm text-zinc-500 max-w-xs mb-4">
+      <p className="text-sm text-muted-foreground max-w-xs mb-4">
         {description || defaultContent.description}
       </p>
       

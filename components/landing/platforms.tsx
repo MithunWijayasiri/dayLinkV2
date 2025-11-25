@@ -11,9 +11,9 @@ const platforms = [
 
 export function Platforms() {
   return (
-    <section className="py-16 bg-zinc-950 border-y border-zinc-800/50">
+    <section className="py-16 bg-background border-y border-border/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm text-zinc-500 mb-8 uppercase tracking-wider">
+        <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">
           Supports all major platforms
         </p>
         
@@ -21,7 +21,7 @@ export function Platforms() {
           {platforms.map((platform, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 text-zinc-400 hover:text-zinc-200 transition-colors"
+              className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
             >
               <platform.icon className={`w-6 h-6 ${platform.color}`} />
               <span className="font-medium">{platform.name}</span>

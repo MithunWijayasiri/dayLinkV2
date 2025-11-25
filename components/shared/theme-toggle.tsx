@@ -9,7 +9,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-14 h-7 rounded-full bg-zinc-800 animate-pulse" />
+      <div className="w-14 h-7 rounded-full bg-muted animate-pulse" />
     );
   }
 

@@ -33,16 +33,16 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-zinc-600 border-t-zinc-50 rounded-full animate-spin" />
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-muted border-t-foreground rounded-full animate-spin" />
       </div>
     );
   }
 
   if (isAuthenticated) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-zinc-600 border-t-zinc-50 rounded-full animate-spin" />
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-muted border-t-foreground rounded-full animate-spin" />
       </div>
     );
   }
@@ -55,7 +55,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="min-h-screen bg-zinc-950"
+          className="min-h-screen bg-background"
         >
           <Hero
             onGetStarted={() => setView('onboarding')}
@@ -82,7 +82,7 @@ export default function Home() {
           />
           <button
             onClick={() => setView('landing')}
-            className="fixed bottom-4 left-4 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+            className="fixed bottom-4 left-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to home
           </button>
@@ -99,7 +99,7 @@ export default function Home() {
           <Onboarding onComplete={() => router.push('/dashboard')} />
           <button
             onClick={() => setView('landing')}
-            className="fixed bottom-4 left-4 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+            className="fixed bottom-4 left-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to home
           </button>

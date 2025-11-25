@@ -62,7 +62,7 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
       className={`group relative p-4 rounded-xl border transition-all ${
         isActive
           ? 'bg-green-500/10 border-green-500/30'
-          : 'bg-zinc-900/60 border-zinc-800/50 hover:border-zinc-700/50'
+          : 'bg-card/60 border-border/50 hover:border-border'
       }`}
     >
       <div className="flex items-center gap-3">
@@ -72,7 +72,7 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
           {...listeners}
           className="cursor-grab active:cursor-grabbing p-1 -ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
         >
-          <GripVertical className="w-4 h-4 text-zinc-500" />
+          <GripVertical className="w-4 h-4 text-muted-foreground" />
         </button>
 
         {/* Meeting type icon */}
@@ -82,8 +82,8 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
 
         {/* Meeting info */}
         <div className="flex-1 min-w-0">
-          <h4 className="font-medium text-zinc-50 truncate">{meeting.title}</h4>
-          <p className="text-sm text-zinc-400">
+          <h4 className="font-medium text-foreground truncate">{meeting.title}</h4>
+          <p className="text-sm text-muted-foreground">
             {formatMeetingTime(meeting.time)} • {getRecurringTypeText(meeting)}
           </p>
         </div>
@@ -96,7 +96,7 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
             className={`shrink-0 ${
               isActive
                 ? 'bg-green-500 hover:bg-green-600 text-white'
-                : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-200'
+                : 'bg-muted hover:bg-muted/80 text-foreground'
             }`}
           >
             <ExternalLink className="w-4 h-4 mr-1" />
@@ -106,23 +106,23 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setShowMenu(!showMenu)}
-              className="p-2 rounded-lg hover:bg-zinc-800 transition-colors"
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
             >
-              <MoreVertical className="w-4 h-4 text-zinc-400" />
+              <MoreVertical className="w-4 h-4 text-muted-foreground" />
             </button>
 
             {showMenu && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="absolute right-0 mt-1 w-36 rounded-lg bg-zinc-800 border border-zinc-700 shadow-xl overflow-hidden z-10"
+                className="absolute right-0 mt-1 w-36 rounded-lg bg-card border border-border shadow-xl overflow-hidden z-10"
               >
                 <button
                   onClick={() => {
                     onEdit(meeting);
                     setShowMenu(false);
                   }}
-                  className="w-full flex items-center gap-2 px-3 py-2 text-sm text-zinc-300 hover:bg-zinc-700 transition-colors"
+                  className="w-full flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:bg-muted transition-colors"
                 >
                   <Pencil className="w-4 h-4" />
                   Edit
@@ -132,7 +132,7 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
                     onDelete(meeting.id);
                     setShowMenu(false);
                   }}
-                  className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-400 hover:bg-zinc-700 transition-colors"
+                  className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-500 dark:text-red-400 hover:bg-muted transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                   Delete
@@ -144,7 +144,7 @@ export function MeetingItem({ meeting, onEdit, onDelete, isDragging }: MeetingIt
       </div>
 
       {meeting.description && (
-        <p className="text-sm text-zinc-500 mt-2 ml-14 truncate">{meeting.description}</p>
+        <p className="text-sm text-muted-foreground mt-2 ml-14 truncate">{meeting.description}</p>
       )}
     </motion.div>
   );

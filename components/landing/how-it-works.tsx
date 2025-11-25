@@ -26,7 +26,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 bg-zinc-900/50">
+    <section className="py-24 bg-muted/30">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,17 +34,17 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             How It Works
           </h2>
-          <p className="text-lg text-zinc-400">
+          <p className="text-lg text-muted-foreground">
             Get started in under a minute
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Connection line */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent hidden md:block" />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent hidden md:block" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((item, index) => (
@@ -59,19 +59,19 @@ export function HowItWorks() {
                 <div className="flex flex-col items-center text-center">
                   {/* Step number */}
                   <div className="relative mb-6">
-                    <div className="w-20 h-20 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center">
-                      <item.icon className="w-8 h-8 text-zinc-300" />
+                    <div className="w-20 h-20 rounded-2xl bg-muted border border-border flex items-center justify-center">
+                      <item.icon className="w-8 h-8 text-muted-foreground" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-zinc-950 border border-zinc-700 flex items-center justify-center">
-                      <span className="text-xs font-bold text-zinc-400">{item.step}</span>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center">
+                      <span className="text-xs font-bold text-muted-foreground">{item.step}</span>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-zinc-50 mb-2">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
                     {item.title}
                   </h3>
                   
-                  <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
                     {item.description}
                   </p>
                 </div>

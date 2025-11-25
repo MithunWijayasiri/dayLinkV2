@@ -62,7 +62,7 @@ export function MeetingList({
         action={
           <Button
             onClick={onAddMeeting}
-            className="bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
+            className="bg-muted hover:bg-muted/80 text-foreground"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add Your First Meeting

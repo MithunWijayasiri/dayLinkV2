@@ -92,13 +92,13 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-zinc-950">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md"
       >
-        <div className="glass-card rounded-2xl p-8 border border-zinc-800/50 bg-zinc-900/60 backdrop-blur-xl shadow-2xl">
+        <div className="glass-card rounded-2xl p-8 border border-border/50 bg-card/60 backdrop-blur-xl shadow-2xl">
           <AnimatePresence mode="wait">
             {!showImport ? (
               <motion.div
@@ -109,11 +109,11 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
                 className="space-y-6"
               >
                 <div className="text-center space-y-2">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 mb-4">
-                    <Key className="w-8 h-8 text-zinc-100" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-muted to-muted/50 mb-4">
+                    <Key className="w-8 h-8 text-foreground" />
                   </div>
-                  <h1 className="text-2xl font-bold text-zinc-50">Welcome Back</h1>
-                  <p className="text-zinc-400 text-sm">
+                  <h1 className="text-2xl font-bold text-foreground">Welcome Back</h1>
+                  <p className="text-muted-foreground text-sm">
                     Enter your unique phrase to continue
                   </p>
                 </div>
@@ -126,14 +126,14 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
                       onChange={(e) => handlePhraseChange(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
                       placeholder="XXXXX-XXXXX"
-                      className="h-14 text-center font-mono text-xl tracking-widest bg-zinc-800/50 border-zinc-700 text-zinc-50 placeholder:text-zinc-600 focus:border-zinc-500 focus:ring-zinc-500"
+                      className="h-14 text-center font-mono text-xl tracking-widest bg-muted/50 border-border text-foreground placeholder:text-muted-foreground focus:border-ring focus:ring-ring"
                       autoFocus
                     />
                     {error && (
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 mt-2 text-red-400 text-sm"
+                        className="flex items-center gap-2 mt-2 text-red-500 dark:text-red-400 text-sm"
                       >
                         <AlertCircle className="w-4 h-4" />
                         {error}
@@ -145,7 +145,7 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
                 <Button
                   onClick={handleLogin}
                   disabled={isLoading || phrase.length !== 11}
-                  className="w-full h-12 bg-zinc-50 text-zinc-900 hover:bg-zinc-200 disabled:opacity-50"
+                  className="w-full h-12 bg-foreground text-background hover:bg-foreground/90 disabled:opacity-50"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -159,10 +159,10 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
 
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-zinc-800" />
+                    <div className="w-full border-t border-border" />
                   </div>
                   <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-zinc-900/60 px-2 text-zinc-500">or</span>
+                    <span className="bg-card/60 px-2 text-muted-foreground">or</span>
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
                   <Button
                     onClick={() => setShowImport(true)}
                     variant="outline"
-                    className="flex-1 h-11 bg-zinc-800/50 border-zinc-700 text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50"
+                    className="flex-1 h-11 bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     <Upload className="w-4 h-4 mr-2" />
                     Import Backup
@@ -178,7 +178,7 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
                   <Button
                     onClick={onCreateAccount}
                     variant="outline"
-                    className="flex-1 h-11 bg-zinc-800/50 border-zinc-700 text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50"
+                    className="flex-1 h-11 bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     Create New
                   </Button>
@@ -194,23 +194,23 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
               >
                 <div className="text-center space-y-2">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 mb-4">
-                    <Upload className="w-8 h-8 text-blue-400" />
+                    <Upload className="w-8 h-8 text-blue-500 dark:text-blue-400" />
                   </div>
-                  <h1 className="text-2xl font-bold text-zinc-50">Import Backup</h1>
-                  <p className="text-zinc-400 text-sm">
+                  <h1 className="text-2xl font-bold text-foreground">Import Backup</h1>
+                  <p className="text-muted-foreground text-sm">
                     Upload your dayLink backup file
                   </p>
                 </div>
 
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="p-8 border-2 border-dashed border-zinc-700 rounded-xl text-center cursor-pointer hover:border-zinc-500 transition-colors"
+                  className="p-8 border-2 border-dashed border-border rounded-xl text-center cursor-pointer hover:border-muted-foreground transition-colors"
                 >
-                  <Upload className="w-8 h-8 mx-auto mb-3 text-zinc-500" />
-                  <p className="text-sm text-zinc-400">
+                  <Upload className="w-8 h-8 mx-auto mb-3 text-muted-foreground" />
+                  <p className="text-sm text-muted-foreground">
                     Click to select a backup file
                   </p>
-                  <p className="text-xs text-zinc-500 mt-1">
+                  <p className="text-xs text-muted-foreground/70 mt-1">
                     .json file from dayLink export
                   </p>
                 </div>
@@ -225,7 +225,7 @@ export function Login({ onSuccess, onCreateAccount }: LoginProps) {
 
                 <button
                   onClick={() => setShowImport(false)}
-                  className="w-full text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+                  className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   ← Back to login
                 </button>

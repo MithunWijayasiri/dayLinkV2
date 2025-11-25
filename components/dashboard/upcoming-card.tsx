@@ -32,15 +32,15 @@ export function UpcomingCard({ meeting }: UpcomingCardProps) {
   if (!meeting) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 backdrop-blur-sm"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-card/50 border border-border/50 rounded-2xl p-6"
       >
         <div className="flex items-center gap-3 mb-3">
-          <Sparkles className="w-5 h-5 text-zinc-500" />
-          <span className="text-sm font-medium text-zinc-400">Next Up</span>
+          <Sparkles className="w-5 h-5 text-muted-foreground" />
+          <span className="text-sm font-medium text-muted-foreground">Next Up</span>
         </div>
-        <p className="text-zinc-500">No more meetings today. Enjoy your free time!</p>
+        <p className="text-muted-foreground">No more meetings today. Enjoy your free time!</p>
       </motion.div>
     );
   }

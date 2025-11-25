@@ -16,10 +16,10 @@ export function Greeting() {
       animate={{ opacity: 1, y: 0 }}
       className="mb-8"
     >
-      <h1 className="text-3xl font-bold text-zinc-50">
+      <h1 className="text-3xl font-bold text-foreground">
         {greeting}, {profile?.username || 'there'}!
       </h1>
-      <p className="text-zinc-400 mt-1">{today}</p>
+      <p className="text-muted-foreground mt-1">{today}</p>
     </motion.div>
   );
 }

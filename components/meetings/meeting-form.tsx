@@ -136,9 +136,9 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg bg-zinc-900 border-zinc-800">
+      <DialogContent className="sm:max-w-lg bg-card border-border">
         <DialogHeader>
-          <DialogTitle className="text-xl text-zinc-50">
+          <DialogTitle className="text-xl text-foreground">
             {editMeeting ? 'Edit Meeting' : 'Add Meeting'}
           </DialogTitle>
         </DialogHeader>
@@ -149,7 +149,7 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
             <div
               key={s}
               className={`flex-1 h-1 rounded-full transition-all ${
-                s <= step ? 'bg-zinc-50' : 'bg-zinc-700'
+                s <= step ? 'bg-foreground' : 'bg-muted'
               }`}
             />
           ))}
@@ -164,7 +164,7 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
               exit={{ opacity: 0, x: -20 }}
               className="space-y-4"
             >
-              <p className="text-sm text-zinc-400">Choose meeting type:</p>
+              <p className="text-sm text-muted-foreground">Choose meeting type:</p>
 
               <div className="grid grid-cols-2 gap-3">
                 {meetingTypes.map(({ type, icon: Icon, color }) => (
@@ -173,8 +173,8 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
                     onClick={() => setSelectedType(type)}
                     className={`p-4 rounded-xl border transition-all ${
                       selectedType === type
-                        ? color + ' ring-1 ring-offset-2 ring-offset-zinc-900'
-                        : 'bg-zinc-800/50 border-zinc-700 text-zinc-400 hover:bg-zinc-800'
+                        ? color + ' ring-1 ring-offset-2 ring-offset-background'
+                        : 'bg-muted/50 border-border text-muted-foreground hover:bg-muted'
                     }`}
                   >
                     <Icon className="w-6 h-6 mx-auto mb-2" />
@@ -184,8 +184,8 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
               </div>
 
               {templates.length > 0 && !editMeeting && (
-                <div className="pt-4 border-t border-zinc-800">
-                  <p className="text-sm text-zinc-400 mb-3">Or use a template:</p>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground mb-3">Or use a template:</p>
                   <div className="space-y-2 max-h-40 overflow-y-auto">
                     {templates.map((template) => (
                       <button
@@ -193,12 +193,12 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
                         onClick={() => handleTemplateSelect(template)}
                         className={`w-full p-3 rounded-lg border text-left transition-all ${
                           selectedTemplate === template.id
-                            ? 'bg-zinc-700 border-zinc-600'
-                            : 'bg-zinc-800/50 border-zinc-700 hover:bg-zinc-800'
+                            ? 'bg-muted border-border'
+                            : 'bg-muted/50 border-border hover:bg-muted'
                         }`}
                       >
-                        <p className="text-sm font-medium text-zinc-200">{template.title}</p>
-                        <p className="text-xs text-zinc-500">{template.type} • {template.time}</p>
+                        <p className="text-sm font-medium text-foreground">{template.title}</p>
+                        <p className="text-xs text-muted-foreground">{template.type} • {template.time}</p>
                       </button>
                     ))}
                   </div>
@@ -216,38 +216,38 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
               className="space-y-4"
             >
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
                   Meeting Title *
                 </label>
                 <Input
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g., Daily Standup"
-                  className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                  className="bg-muted/50 border-border text-foreground"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
                   Meeting Link *
                 </label>
                 <Input
                   value={link}
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="https://meet.google.com/..."
-                  className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                  className="bg-muted/50 border-border text-foreground"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
                   Description (optional)
                 </label>
                 <Input
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Brief description..."
-                  className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                  className="bg-muted/50 border-border text-foreground"
                 />
               </div>
             </motion.div>
@@ -262,19 +262,19 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
               className="space-y-4"
             >
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
                   Time
                 </label>
                 <Input
                   type="time"
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
-                  className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                  className="bg-muted/50 border-border text-foreground"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
                   Recurrence
                 </label>
                 <div className="space-y-2">
@@ -284,11 +284,11 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
                       onClick={() => setRecurringType(type)}
                       className={`w-full p-3 rounded-lg border text-left transition-all ${
                         recurringType === type
-                          ? 'bg-zinc-700 border-zinc-600'
-                          : 'bg-zinc-800/50 border-zinc-700 hover:bg-zinc-800'
+                          ? 'bg-muted border-border'
+                          : 'bg-muted/50 border-border hover:bg-muted'
                       }`}
                     >
-                      <span className="text-sm text-zinc-200">{label}</span>
+                      <span className="text-sm text-foreground">{label}</span>
                     </button>
                   ))}
                 </div>
@@ -296,7 +296,7 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
 
               {recurringType === 'specificDays' && (
                 <div>
-                  <label className="block text-sm font-medium text-zinc-300 mb-2">
+                  <label className="block text-sm font-medium text-foreground/80 mb-2">
                     Select Days
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -306,8 +306,8 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
                         onClick={() => handleDayToggle(day)}
                         className={`px-3 py-2 rounded-lg text-sm transition-all ${
                           specificDays.includes(day)
-                            ? 'bg-zinc-50 text-zinc-900'
-                            : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                            ? 'bg-foreground text-background'
+                            : 'bg-muted text-muted-foreground hover:bg-muted/80'
                         }`}
                       >
                         {day.slice(0, 3)}
@@ -319,14 +319,14 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
 
               {recurringType === 'specific' && (
                 <div>
-                  <label className="block text-sm font-medium text-zinc-300 mb-2">
+                  <label className="block text-sm font-medium text-foreground/80 mb-2">
                     Select Dates
                   </label>
                   <Calendar
                     mode="multiple"
                     selected={specificDates}
                     onSelect={(dates) => setSpecificDates(dates || [])}
-                    className="rounded-lg border border-zinc-700 bg-zinc-800"
+                    className="rounded-lg border border-border bg-muted"
                   />
                 </div>
               )}
@@ -335,12 +335,12 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
         </AnimatePresence>
 
         {/* Navigation buttons */}
-        <div className="flex justify-between pt-4 border-t border-zinc-800">
+        <div className="flex justify-between pt-4 border-t border-border">
           {step > 1 ? (
             <Button
               variant="outline"
               onClick={() => setStep(step - 1)}
-              className="bg-zinc-800/50 border-zinc-700 text-zinc-300"
+              className="bg-muted/50 border-border text-muted-foreground"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
@@ -353,7 +353,7 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
             <Button
               onClick={() => setStep(step + 1)}
               disabled={!canProceed()}
-              className="bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+              className="bg-foreground text-background hover:bg-foreground/90"
             >
               Next
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -362,7 +362,7 @@ export function MeetingForm({ isOpen, onClose, onSave, editMeeting, templates = 
             <Button
               onClick={handleSubmit}
               disabled={!canProceed()}
-              className="bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+              className="bg-foreground text-background hover:bg-foreground/90"
             >
               <Check className="w-4 h-4 mr-2" />
               {editMeeting ? 'Save Changes' : 'Add Meeting'}

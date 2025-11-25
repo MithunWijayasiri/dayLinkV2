@@ -64,7 +64,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-zinc-950">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -76,13 +76,13 @@ export function Onboarding({ onComplete }: OnboardingProps) {
             <div
               key={s}
               className={`h-2 rounded-full transition-all duration-300 ${
-                s === step ? 'w-8 bg-zinc-50' : s < step ? 'w-2 bg-zinc-50' : 'w-2 bg-zinc-700'
+                s === step ? 'w-8 bg-foreground' : s < step ? 'w-2 bg-foreground' : 'w-2 bg-muted'
               }`}
             />
           ))}
         </div>
 
-        <div className="glass-card rounded-2xl p-8 border border-zinc-800/50 bg-zinc-900/60 backdrop-blur-xl shadow-2xl">
+        <div className="glass-card rounded-2xl p-8 border border-border/50 bg-card/60 backdrop-blur-xl shadow-2xl">
           <AnimatePresence mode="wait">
             {step === 1 && (
               <motion.div
@@ -94,28 +94,28 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                 className="space-y-6"
               >
                 <div className="text-center space-y-2">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 mb-4">
-                    <Sparkles className="w-8 h-8 text-zinc-100" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-muted to-muted/50 mb-4">
+                    <Sparkles className="w-8 h-8 text-foreground" />
                   </div>
-                  <h1 className="text-2xl font-bold text-zinc-50">Welcome to dayLink</h1>
-                  <p className="text-zinc-400">
+                  <h1 className="text-2xl font-bold text-foreground">Welcome to dayLink</h1>
+                  <p className="text-muted-foreground">
                     Let&apos;s set up your privacy-first meeting scheduler
                   </p>
                 </div>
 
                 <div className="space-y-4 pt-4">
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50">
-                    <Shield className="w-5 h-5 text-green-400 mt-0.5 shrink-0" />
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50 border border-border/50">
+                    <Shield className="w-5 h-5 text-green-500 dark:text-green-400 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-medium text-zinc-200">100% Private</p>
-                      <p className="text-xs text-zinc-400">All data stays in your browser</p>
+                      <p className="text-sm font-medium text-foreground">100% Private</p>
+                      <p className="text-xs text-muted-foreground">All data stays in your browser</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50">
-                    <Key className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" />
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50 border border-border/50">
+                    <Key className="w-5 h-5 text-blue-500 dark:text-blue-400 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-medium text-zinc-200">Encrypted Storage</p>
-                      <p className="text-xs text-zinc-400">Your data is encrypted with AES-256</p>
+                      <p className="text-sm font-medium text-foreground">Encrypted Storage</p>
+                      <p className="text-xs text-muted-foreground">Your data is encrypted with AES-256</p>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                     handleGeneratePhrase();
                     setStep(2);
                   }}
-                  className="w-full h-12 bg-zinc-50 text-zinc-900 hover:bg-zinc-200 transition-all"
+                  className="w-full h-12 bg-foreground text-background hover:bg-foreground/90 transition-all"
                 >
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -144,16 +144,16 @@ export function Onboarding({ onComplete }: OnboardingProps) {
               >
                 <div className="text-center space-y-2">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 mb-4">
-                    <Key className="w-8 h-8 text-amber-400" />
+                    <Key className="w-8 h-8 text-amber-500 dark:text-amber-400" />
                   </div>
-                  <h1 className="text-2xl font-bold text-zinc-50">Your Unique Phrase</h1>
-                  <p className="text-zinc-400 text-sm">
+                  <h1 className="text-2xl font-bold text-foreground">Your Unique Phrase</h1>
+                  <p className="text-muted-foreground text-sm">
                     This phrase is your key to access your meetings
                   </p>
                 </div>
 
                 <div className="relative">
-                  <div className="p-4 rounded-xl bg-zinc-800 border border-zinc-700 text-center font-mono text-xl tracking-widest text-zinc-50">
+                  <div className="p-4 rounded-xl bg-muted border border-border text-center font-mono text-xl tracking-widest text-foreground">
                     {phrase}
                   </div>
                 </div>
@@ -162,11 +162,11 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                   <Button
                     onClick={handleCopy}
                     variant="outline"
-                    className="flex-1 h-11 bg-zinc-800/50 border-zinc-700 text-zinc-200 hover:bg-zinc-700 hover:text-zinc-50"
+                    className="flex-1 h-11 bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     {copied ? (
                       <>
-                        <Check className="w-4 h-4 mr-2 text-green-400" />
+                        <Check className="w-4 h-4 mr-2 text-green-500 dark:text-green-400" />
                         Copied!
                       </>
                     ) : (
@@ -179,7 +179,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                   <Button
                     onClick={handleDownload}
                     variant="outline"
-                    className="flex-1 h-11 bg-zinc-800/50 border-zinc-700 text-zinc-200 hover:bg-zinc-700 hover:text-zinc-50"
+                    className="flex-1 h-11 bg-muted/50 border-border text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Download
@@ -187,14 +187,14 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                 </div>
 
                 <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                  <p className="text-xs text-amber-200/80 text-center">
+                  <p className="text-xs text-amber-700 dark:text-amber-200/80 text-center">
                     ⚠️ Save this phrase! You&apos;ll need it to recover your data.
                   </p>
                 </div>
 
                 <Button
                   onClick={() => setStep(3)}
-                  className="w-full h-12 bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+                  className="w-full h-12 bg-foreground text-background hover:bg-foreground/90"
                 >
                   I&apos;ve Saved My Phrase
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -212,15 +212,15 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                 className="space-y-6"
               >
                 <div className="text-center space-y-2">
-                  <h1 className="text-2xl font-bold text-zinc-50">Almost There!</h1>
-                  <p className="text-zinc-400 text-sm">
+                  <h1 className="text-2xl font-bold text-foreground">Almost There!</h1>
+                  <p className="text-muted-foreground text-sm">
                     Add your name (optional)
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                    <label className="block text-sm font-medium text-foreground/80 mb-2">
                       Your Name (optional)
                     </label>
                     <Input
@@ -228,7 +228,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       placeholder="Enter your name"
-                      className="h-12 bg-zinc-800/50 border-zinc-700 text-zinc-50 placeholder:text-zinc-500 focus:border-zinc-500 focus:ring-zinc-500"
+                      className="h-12 bg-muted/50 border-border text-foreground placeholder:text-muted-foreground focus:border-ring focus:ring-ring"
                     />
                   </div>
                 </div>
@@ -236,7 +236,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                 <Button
                   onClick={handleComplete}
                   disabled={isLoading}
-                  className="w-full h-12 bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+                  className="w-full h-12 bg-foreground text-background hover:bg-foreground/90"
                 >
                   {isLoading ? 'Setting up...' : 'Complete Setup'}
                   {!isLoading && <Sparkles className="w-4 h-4 ml-2" />}
@@ -244,7 +244,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
 
                 <button
                   onClick={() => setStep(2)}
-                  className="w-full text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+                  className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   ← Go back
                 </button>

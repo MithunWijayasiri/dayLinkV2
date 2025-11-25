@@ -49,9 +49,9 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl bg-zinc-900 border-zinc-800 max-h-[85vh] overflow-hidden">
+      <DialogContent className="sm:max-w-2xl bg-card border-border max-h-[85vh] overflow-hidden">
         <DialogHeader>
-          <DialogTitle className="text-xl text-zinc-50">Calendar</DialogTitle>
+          <DialogTitle className="text-xl text-foreground">Calendar</DialogTitle>
         </DialogHeader>
 
         <div className="flex flex-col lg:flex-row gap-6">
@@ -61,18 +61,18 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
             <div className="flex items-center justify-between mb-4">
               <button
                 onClick={previousMonth}
-                className="p-2 rounded-lg hover:bg-zinc-800 transition-colors"
+                className="p-2 rounded-lg hover:bg-muted transition-colors"
               >
-                <ChevronLeft className="w-5 h-5 text-zinc-400" />
+                <ChevronLeft className="w-5 h-5 text-muted-foreground" />
               </button>
-              <h3 className="text-lg font-semibold text-zinc-50">
+              <h3 className="text-lg font-semibold text-foreground">
                 {format(currentMonth, 'MMMM yyyy')}
               </h3>
               <button
                 onClick={nextMonth}
-                className="p-2 rounded-lg hover:bg-zinc-800 transition-colors"
+                className="p-2 rounded-lg hover:bg-muted transition-colors"
               >
-                <ChevronRight className="w-5 h-5 text-zinc-400" />
+                <ChevronRight className="w-5 h-5 text-muted-foreground" />
               </button>
             </div>
 
@@ -81,7 +81,7 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
               {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
                 <div
                   key={day}
-                  className="text-center text-xs font-medium text-zinc-500 py-2"
+                  className="text-center text-xs font-medium text-muted-foreground py-2"
                 >
                   {day}
                 </div>
@@ -106,10 +106,10 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
                     onClick={() => setSelectedDate(day)}
                     className={`aspect-square rounded-lg p-1 transition-all relative ${
                       isSelected
-                        ? 'bg-zinc-50 text-zinc-900'
+                        ? 'bg-foreground text-background'
                         : dayIsToday
-                        ? 'bg-zinc-800 text-zinc-50'
-                        : 'hover:bg-zinc-800 text-zinc-300'
+                        ? 'bg-muted text-foreground'
+                        : 'hover:bg-muted text-foreground/80'
                     }`}
                   >
                     <span className="text-sm">{format(day, 'd')}</span>
@@ -124,12 +124,12 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
                             <div
                               key={i}
                               className={`w-1.5 h-1.5 rounded-full ${
-                                isSelected ? 'bg-zinc-900' : 'bg-blue-400'
+                                isSelected ? 'bg-background' : 'bg-blue-500 dark:bg-blue-400'
                               }`}
                             />
                           ))
                         ) : (
-                          <span className={`text-[10px] ${isSelected ? 'text-zinc-900' : 'text-blue-400'}`}>
+                          <span className={`text-[10px] ${isSelected ? 'text-background' : 'text-blue-500 dark:text-blue-400'}`}>
                             {count}
                           </span>
                         )}
@@ -142,7 +142,7 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
           </div>
 
           {/* Selected day meetings */}
-          <div className="lg:w-64 border-t lg:border-t-0 lg:border-l border-zinc-800 pt-4 lg:pt-0 lg:pl-6">
+          <div className="lg:w-64 border-t lg:border-t-0 lg:border-l border-border pt-4 lg:pt-0 lg:pl-6">
             <AnimatePresence mode="wait">
               {selectedDate ? (
                 <motion.div
@@ -152,20 +152,20 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
                   exit={{ opacity: 0, x: -10 }}
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-medium text-zinc-50">
+                    <h4 className="font-medium text-foreground">
                       {format(selectedDate, 'MMM d, yyyy')}
                     </h4>
                     <Button
                       size="sm"
                       onClick={onAddMeeting}
-                      className="bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
+                      className="bg-muted hover:bg-muted/80 text-foreground"
                     >
                       <Plus className="w-4 h-4" />
                     </Button>
                   </div>
 
                   {dayMeetings.length === 0 ? (
-                    <p className="text-sm text-zinc-500">No meetings scheduled</p>
+                    <p className="text-sm text-muted-foreground">No meetings scheduled</p>
                   ) : (
                     <div className="space-y-2 max-h-[300px] overflow-y-auto">
                       {dayMeetings.map((meeting) => {
@@ -173,23 +173,23 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
                         return (
                           <div
                             key={meeting.id}
-                            className="p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50"
+                            className="p-3 rounded-lg bg-muted/50 border border-border/50"
                           >
                             <div className="flex items-start gap-2">
-                              <Icon className="w-4 h-4 text-zinc-400 mt-0.5 shrink-0" />
+                              <Icon className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-zinc-200 truncate">
+                                <p className="text-sm font-medium text-foreground truncate">
                                   {meeting.title}
                                 </p>
-                                <p className="text-xs text-zinc-500">
+                                <p className="text-xs text-muted-foreground">
                                   {formatMeetingTime(meeting.time)}
                                 </p>
                               </div>
                               <button
                                 onClick={() => window.open(meeting.link, '_blank')}
-                                className="p-1 rounded hover:bg-zinc-700 transition-colors"
+                                className="p-1 rounded hover:bg-muted transition-colors"
                               >
-                                <ExternalLink className="w-3 h-3 text-zinc-500" />
+                                <ExternalLink className="w-3 h-3 text-muted-foreground" />
                               </button>
                             </div>
                           </div>
@@ -204,7 +204,7 @@ export function CalendarView({ isOpen, onClose, meetings, onAddMeeting }: Calend
                   animate={{ opacity: 1 }}
                   className="text-center py-8"
                 >
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-muted-foreground">
                     Select a date to view meetings
                   </p>
                 </motion.div>

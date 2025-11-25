@@ -67,7 +67,7 @@ export function Features() {
   };
 
   return (
-    <section className="py-24 bg-zinc-950">
+    <section className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,10 +75,10 @@ export function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Built for Privacy
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every feature designed with your privacy in mind
           </p>
         </motion.div>
@@ -94,7 +94,7 @@ export function Features() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group relative p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 backdrop-blur-sm hover:border-zinc-700/50 transition-all duration-300"
+              className="group relative p-6 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm hover:border-border transition-all duration-300"
             >
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
@@ -103,11 +103,11 @@ export function Features() {
                   <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                 </div>
                 
-                <h3 className="text-lg font-semibold text-zinc-50 mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
                 
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

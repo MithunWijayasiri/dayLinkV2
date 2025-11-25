@@ -71,9 +71,9 @@ export function MeetingTemplates({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg bg-zinc-900 border-zinc-800 max-h-[80vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-lg bg-card border-border max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl text-zinc-50">Meeting Templates</DialogTitle>
+          <DialogTitle className="text-xl text-foreground">Meeting Templates</DialogTitle>
         </DialogHeader>
 
         {!showForm ? (
@@ -84,7 +84,7 @@ export function MeetingTemplates({
                 action={
                   <Button
                     onClick={() => setShowForm(true)}
-                    className="bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
+                    className="bg-muted hover:bg-muted/80 text-foreground"
                   >
                     <Plus className="w-4 h-4 mr-2" />
                     Create Template
@@ -101,21 +101,21 @@ export function MeetingTemplates({
                         key={template.id}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-3 p-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50"
+                        className="flex items-center gap-3 p-4 rounded-xl bg-muted/50 border border-border/50"
                       >
-                        <div className="w-10 h-10 rounded-lg bg-zinc-700/50 flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-zinc-400" />
+                        <div className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-muted-foreground" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-zinc-50 truncate">{template.title}</h4>
-                          <p className="text-sm text-zinc-500">{template.type} • {template.time}</p>
+                          <h4 className="font-medium text-foreground truncate">{template.title}</h4>
+                          <p className="text-sm text-muted-foreground">{template.type} • {template.time}</p>
                         </div>
                         <button
                           onClick={() => {
                             onDeleteTemplate(template.id);
                             toast.success('Template deleted');
                           }}
-                          className="p-2 rounded-lg hover:bg-zinc-700 text-zinc-500 hover:text-red-400 transition-colors"
+                          className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-red-500 dark:hover:text-red-400 transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -126,7 +126,7 @@ export function MeetingTemplates({
 
                 <Button
                   onClick={() => setShowForm(true)}
-                  className="w-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200"
+                  className="w-full bg-muted hover:bg-muted/80 text-foreground"
                 >
                   <Plus className="w-4 h-4 mr-2" />
                   Create New Template
@@ -141,17 +141,17 @@ export function MeetingTemplates({
             className="space-y-4"
           >
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">Title</label>
+              <label className="block text-sm font-medium text-foreground/80 mb-2">Title</label>
               <Input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g., Daily Standup"
-                className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                className="bg-muted/50 border-border text-foreground"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">Type</label>
+              <label className="block text-sm font-medium text-foreground/80 mb-2">Type</label>
               <div className="grid grid-cols-2 gap-2">
                 {(['Google Meet', 'Microsoft Teams', 'Zoom', 'Other'] as MeetingType[]).map((t) => {
                   const Icon = typeIcons[t];
@@ -161,8 +161,8 @@ export function MeetingTemplates({
                       onClick={() => setType(t)}
                       className={`p-3 rounded-lg border text-sm transition-all ${
                         type === t
-                          ? 'bg-zinc-700 border-zinc-600 text-zinc-50'
-                          : 'bg-zinc-800/50 border-zinc-700 text-zinc-400 hover:bg-zinc-800'
+                          ? 'bg-muted border-border text-foreground'
+                          : 'bg-muted/50 border-border text-muted-foreground hover:bg-muted'
                       }`}
                     >
                       <Icon className="w-4 h-4 inline mr-2" />
@@ -174,17 +174,17 @@ export function MeetingTemplates({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">Time</label>
+              <label className="block text-sm font-medium text-foreground/80 mb-2">Time</label>
               <Input
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="bg-zinc-800/50 border-zinc-700 text-zinc-50"
+                className="bg-muted/50 border-border text-foreground"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">Recurrence</label>
+              <label className="block text-sm font-medium text-foreground/80 mb-2">Recurrence</label>
               <div className="grid grid-cols-2 gap-2">
                 {(['everyday', 'weekdays', 'weekends', 'specificDays'] as RecurringType[]).map((r) => (
                   <button
@@ -192,8 +192,8 @@ export function MeetingTemplates({
                     onClick={() => setRecurringType(r)}
                     className={`p-3 rounded-lg border text-sm transition-all ${
                       recurringType === r
-                        ? 'bg-zinc-700 border-zinc-600 text-zinc-50'
-                        : 'bg-zinc-800/50 border-zinc-700 text-zinc-400 hover:bg-zinc-800'
+                        ? 'bg-muted border-border text-foreground'
+                        : 'bg-muted/50 border-border text-muted-foreground hover:bg-muted'
                     }`}
                   >
                     {r === 'everyday' && 'Every day'}
@@ -207,7 +207,7 @@ export function MeetingTemplates({
 
             {recurringType === 'specificDays' && (
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">Days</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">Days</label>
                 <div className="flex flex-wrap gap-2">
                   {DAYS_OF_WEEK.map((day) => (
                     <button
@@ -215,8 +215,8 @@ export function MeetingTemplates({
                       onClick={() => handleDayToggle(day)}
                       className={`px-3 py-2 rounded-lg text-sm transition-all ${
                         specificDays.includes(day)
-                          ? 'bg-zinc-50 text-zinc-900'
-                          : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                          ? 'bg-foreground text-background'
+                          : 'bg-muted text-muted-foreground hover:bg-muted/80'
                       }`}
                     >
                       {day.slice(0, 3)}
@@ -226,17 +226,17 @@ export function MeetingTemplates({
               </div>
             )}
 
-            <div className="flex gap-3 pt-4 border-t border-zinc-800">
+            <div className="flex gap-3 pt-4 border-t border-border">
               <Button
                 variant="outline"
                 onClick={() => setShowForm(false)}
-                className="flex-1 bg-zinc-800/50 border-zinc-700 text-zinc-300"
+                className="flex-1 bg-muted/50 border-border text-muted-foreground"
               >
                 Cancel
               </Button>
               <Button
                 onClick={handleSubmit}
-                className="flex-1 bg-zinc-50 text-zinc-900 hover:bg-zinc-200"
+                className="flex-1 bg-foreground text-background hover:bg-foreground/90"
               >
                 Create Template
               </Button>
