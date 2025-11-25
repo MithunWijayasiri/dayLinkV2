@@ -6,7 +6,7 @@ import { Hero } from '@/components/landing/hero';
 import { Features } from '@/components/landing/features';
 import { HowItWorks } from '@/components/landing/how-it-works';
 import { Platforms } from '@/components/landing/platforms';
-import { CTA } from '@/components/landing/cta';
+
 import { Footer } from '@/components/shared/footer';
 import { Login } from '@/components/auth/login';
 import { Onboarding } from '@/components/auth/onboarding';
@@ -64,7 +64,7 @@ export default function Home() {
           <Platforms />
           <Features />
           <HowItWorks />
-          <CTA onGetStarted={() => setView('onboarding')} />
+
           <Footer />
         </motion.div>
       )}

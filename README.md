@@ -1,36 +1,36 @@
-# dayLink - Privacy-First Meeting Scheduler
+# dayLink - Meeting Scheduler
 
 ![dayLink Banner](https://img.shields.io/badge/Privacy-First-green) ![Next.js](https://img.shields.io/badge/Next.js-16-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
 A privacy-first meeting scheduler that runs entirely in your browser. No servers, no tracking, no compromises.
 
-## ✨ Features
+## Features
 
-### 🔒 Privacy First
+### Privacy First
 - **100% Local Storage** - All data stays in your browser
 - **AES-256 Encryption** - Military-grade encryption for your data
 - **No Backend Required** - Zero servers, zero tracking
 - **Unique Phrase Authentication** - No email or password needed
 
-### 📅 Meeting Management
+### Meeting Management
 - **Multi-Platform Support** - Google Meet, Microsoft Teams, Zoom, and custom links
 - **Recurring Meetings** - Daily, weekdays, weekends, or custom schedules
 - **Drag & Drop Reordering** - Organize meetings your way
 - **Quick Templates** - Create meetings from saved templates
 
-### 🎨 Modern UI
+### Modern UI
 - **Dark Mode Default** - Easy on the eyes with optional light mode
 - **Animated Transitions** - Smooth Framer Motion animations
 - **Responsive Design** - Works on desktop and mobile
 - **Calendar View** - Visual overview with meeting indicators
 
-### 🔔 Smart Features
+### Smart Features
 - **Browser Notifications** - Get reminded before meetings
 - **One-Click Join** - Join meetings instantly
 - **Export/Import Backup** - Easily move between devices
 - **Offline Ready** - Works without internet connection
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -42,7 +42,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 dayLink/
@@ -74,7 +74,7 @@ dayLink/
     └── templates.ts        # Default meeting templates
 ```
 
-## 🔐 How Authentication Works
+## How Authentication Works
 
 dayLink uses a unique **phrase-based authentication** system:
 
@@ -84,23 +84,7 @@ dayLink uses a unique **phrase-based authentication** system:
 
 Your phrase is used to encrypt/decrypt your data using AES-256 encryption.
 
-## 📱 Supported Platforms
-
-| Platform | Auto-Detection | Icon |
-|----------|---------------|------|
-| Google Meet | ✅ | 🟢 |
-| Microsoft Teams | ✅ | 🔵 |
-| Zoom | ✅ | 🔷 |
-| Custom Links | ✅ | 🔗 |
-
-## 🎨 Theming
-
-dayLink uses CSS custom properties for theming:
-
-- **Dark Mode** (default) - Perfect for late-night meeting prep
-- **Light Mode** - Toggle via the sun/moon switch in the header
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 16 with App Router & Turbopack
 - **Language**: TypeScript 5
@@ -112,7 +96,7 @@ dayLink uses CSS custom properties for theming:
 - **Date Handling**: date-fns 4
 - **Notifications**: react-hot-toast
 
-## 📦 Scripts
+## Scripts
 
 ```bash
 npm run dev      # Start development server
@@ -121,7 +105,7 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
-## 🔄 Data Backup
+## Data Backup
 
 ### Export Backup
 1. Click your username in the header
@@ -133,14 +117,10 @@ npm run lint     # Run ESLint
 2. Click "Import Backup"
 3. Select your backup file
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-**Made with ❤️ for privacy**

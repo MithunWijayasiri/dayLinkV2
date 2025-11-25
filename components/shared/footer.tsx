@@ -10,12 +10,12 @@ export function Footer() {
           <div className="flex items-center gap-2 text-muted-foreground">
             <span className="font-semibold text-foreground">dayLink</span>
             <span>•</span>
-            <span className="text-sm">Privacy-first meeting scheduler</span>
+            <span className="text-sm">Meeting scheduler</span>
           </div>
-          
+
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a
-              href="https://github.com"
+              href="https://github.com/MithunWijayasiri/dayLinkV2"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-foreground transition-colors"
@@ -24,7 +24,7 @@ export function Footer() {
               Open Source
             </a>
             <span className="flex items-center gap-1">
-              Made with <Heart className="w-3 h-3 text-red-500" /> for privacy
+              Made with <Heart className="w-3 h-3 text-red-500" /> by Mithun Wijayasiri
             </span>
           </div>
         </div>
