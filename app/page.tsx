@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/hooks/use-auth';
+import { Header } from '@/components/landing/header';
 import { Hero } from '@/components/landing/hero';
 import { Features } from '@/components/landing/features';
 import { HowItWorks } from '@/components/landing/how-it-works';
@@ -57,6 +58,10 @@ export default function Home() {
           exit={{ opacity: 0 }}
           className="min-h-screen bg-background"
         >
+          <Header
+            onLogin={() => setView('login')}
+            onGetStarted={() => setView('onboarding')}
+          />
           <Hero
             onGetStarted={() => setView('onboarding')}
             onLogin={() => setView('login')}

@@ -11,7 +11,7 @@ interface HeroProps {
 
 export function Hero({ onGetStarted, onLogin }: HeroProps) {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-28">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
 
@@ -34,7 +34,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/60 border border-border/50 backdrop-blur-sm"
           >
             <Shield className="w-4 h-4 text-green-500 dark:text-green-400" />
-            <span className="text-sm text-muted-foreground">dayLink - 100% Privacy-First</span>
+            <span className="text-sm text-muted-foreground">100% Privacy-First</span>
           </motion.div>
 
           {/* Main heading */}
