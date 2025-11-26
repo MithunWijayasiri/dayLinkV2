@@ -45,12 +45,15 @@ export function Header({ onLogin, onGetStarted }: HeaderProps) {
           </Button>
           <Button onClick={onGetStarted}>Get Started</Button>
         </div>
-        
-        {/* Mobile menu placeholder if needed, for now keeping it simple */}
+
+        {/* Mobile menu */}
         <div className="sm:hidden flex items-center gap-2">
-            <Button variant="ghost" size="sm" onClick={onLogin}>
-                Login
-            </Button>
+          <Button variant="ghost" size="sm" onClick={onLogin}>
+            Login
+          </Button>
+          <Button size="sm" onClick={onGetStarted}>
+            Get Started
+          </Button>
         </div>
       </div>
     </motion.header>
