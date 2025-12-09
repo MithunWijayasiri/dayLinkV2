@@ -34,10 +34,10 @@ A privacy-first meeting scheduler that runs entirely in your browser. No servers
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -86,7 +86,7 @@ Your phrase is used to encrypt/decrypt your data using AES-256 encryption.
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 with App Router & Turbopack
+- **Framework**: Next.js 15 with App Router & Turbopack
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4 with CSS variables
 - **Animations**: Framer Motion 12
@@ -99,10 +99,10 @@ Your phrase is used to encrypt/decrypt your data using AES-256 encryption.
 ## Scripts
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run start    # Start production server
-npm run lint     # Run ESLint
+pnpm dev      # Start development server
+pnpm build    # Build for production
+pnpm start    # Start production server
+pnpm lint     # Run ESLint
 ```
 
 ## Data Backup

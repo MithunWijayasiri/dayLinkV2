@@ -5,9 +5,8 @@ import { Meeting } from '@/types';
 import { getMeetingsForDate, formatMeetingTime } from '@/lib/meeting-utils';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Calendar } from '@/components/ui/calendar';
 import { ChevronLeft, ChevronRight, Plus, Video, Users, MonitorPlay, Link2, ExternalLink } from 'lucide-react';
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isToday, isSameDay } from 'date-fns';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, isToday, isSameDay } from 'date-fns';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface CalendarViewProps {
