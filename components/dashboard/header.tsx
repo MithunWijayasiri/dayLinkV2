@@ -2,8 +2,7 @@
 
 import { useAuth } from '@/hooks/use-auth';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
-import { Button } from '@/components/ui/button';
-import { LogOut, Download, User, Settings, ChevronDown } from 'lucide-react';
+import { LogOut, Download, User, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';

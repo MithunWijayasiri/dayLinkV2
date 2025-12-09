@@ -18,7 +18,7 @@ interface MeetingFormProps {
   templates?: MeetingTemplate[];
 }
 
-const meetingTypes: { type: MeetingType; icon: any; color: string }[] = [
+const meetingTypes: { type: MeetingType; icon: React.ComponentType<{ className?: string }>; color: string }[] = [
   { type: 'Google Meet', icon: Video, color: 'bg-green-500/20 border-green-500/30 text-green-400' },
   { type: 'Microsoft Teams', icon: Users, color: 'bg-blue-500/20 border-blue-500/30 text-blue-400' },
   { type: 'Zoom', icon: MonitorPlay, color: 'bg-sky-500/20 border-sky-500/30 text-sky-400' },

@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 export default function Dashboard() {
-  const { isAuthenticated, profile } = useAuth();
+  const { isAuthenticated } = useAuth();
   const {
     meetings,
     templates,

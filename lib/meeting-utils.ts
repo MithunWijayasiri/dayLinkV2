@@ -1,5 +1,5 @@
 import { Meeting, DAYS_OF_WEEK } from '@/types';
-import { format, isToday, parse, isBefore, isAfter, addMinutes } from 'date-fns';
+import { format, isBefore, isAfter, addMinutes } from 'date-fns';
 
 /**
  * Check if a meeting occurs on a given date
